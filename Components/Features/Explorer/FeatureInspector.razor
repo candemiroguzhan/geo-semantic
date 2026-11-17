@@ -1,0 +1,15 @@
+@inherits WorkspaceComponent
+<section class="feature-inspector">
+    <div class="section-heading"><h2>Feature Inspector</h2><span>SELECTION</span></div>
+    @if (State.SelectedFeature is not { } feature) {
+        <div class="inspector-empty"><span>⌖</span><h3>Look closer</h3><p>Select a feature on the map or a search result to explore its attributes.</p></div>
+    } else {
+        <span class="eyebrow">@feature.GeometryType</span><h2 class="feature-title">@feature.Name</h2><p class="muted">@feature.Category</p>
+        @if (State.Search?.Results.FirstOrDefault(r => r.FeatureId == feature.Id) is { } result) {
+            <div class="score-card"><span>Cosine similarity</span><strong>@result.Score.ToString("F4")</strong><small>Rank @result.Rank · similarity score</small></div>
+        }
+        <dl><dt>Dataset</dt><dd>@State.Datasets.FirstOrDefault(d => d.Id == feature.DatasetId)?.Name</dd><dt>Feature ID</dt><dd class="mono">@feature.Id</dd></dl>
+        <h3>Attributes</h3><table class="attribute-table"><tbody>@foreach (var property in feature.Properties) { <tr><th scope="row">@property.Key</th><td>@property.Value.ToString()</td></tr> }</tbody></table>
+    }
+</section>
+

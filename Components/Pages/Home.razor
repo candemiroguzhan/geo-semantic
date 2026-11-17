@@ -1,0 +1,14 @@
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<p><a href="/explorer">Open geo-semantic geospatial AI workspace →</a></p>
+
+@inject NavigationManager Navigation
+@code {
+    protected override void OnInitialized() => Navigation.NavigateTo("/explorer", replace: true);
+}

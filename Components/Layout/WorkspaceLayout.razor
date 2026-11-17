@@ -1,0 +1,19 @@
+@inherits LayoutComponentBase
+@using MudBlazor
+<MudThemeProvider Theme="_theme" IsDarkMode="true" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+@Body
+<div id="blazor-error-ui">Connection interrupted. <a href="">Reload workspace</a></div>
+@code {
+    private readonly MudTheme _theme = new() {
+        PaletteDark = new PaletteDark {
+            Background = "#191918", Surface = "#21211f", Primary = "#d9956b",
+            PrimaryContrastText = "#241b15",
+            TextPrimary = "#f1ede5", TextSecondary = "#b1aca1", Divider = "#3d3b35"
+        },
+        Typography = new Typography { Default = new DefaultTypography { FontFamily = ["Poppins", "Segoe UI", "sans-serif"] } }
+    };
+}
+

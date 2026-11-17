@@ -1,0 +1,606 @@
+{
+  "type": "FeatureCollection",
+  "name": "Fictional Ankara POIs — all places are invented",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "fictional-1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.825,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Söğüt Yürüyüş Bahçesi 1 (Kurgusal)",
+        "category": "Park / Yeşil alan",
+        "description_en": "A quiet green recreational park with shaded walking paths, picnic lawns and a small playground.",
+        "description_tr": "Gölgeli yürüyüş yolları, piknik çimleri ve çocuk oyun alanıyla sakin bir yeşil dinlenme parkı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.837,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Ufuk Sağlık Merkezi 1 (Kurgusal)",
+        "category": "Hospital / Hastane",
+        "description_en": "A hospital offering emergency care, outpatient clinics, diagnostic imaging and family medicine.",
+        "description_tr": "Acil bakım, poliklinik, tıbbi görüntüleme ve aile hekimliği sunan hastane.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.849,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Mavi Bilim Kampüsü 1 (Kurgusal)",
+        "category": "University / Üniversite",
+        "description_en": "A university and research campus with engineering laboratories, a public library and science education.",
+        "description_tr": "Mühendislik laboratuvarları, halka açık kütüphane ve bilim eğitimi bulunan üniversite araştırma kampüsü.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.861,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Filiz Öğrenme Okulu 1 (Kurgusal)",
+        "category": "School / Okul",
+        "description_en": "A primary and secondary school providing classrooms, arts education and after-school activities for children.",
+        "description_tr": "Çocuklar için derslikler, sanat eğitimi ve okul sonrası etkinlikler sunan ilkokul ve ortaokul.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.873,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Demir Üretim Yerleşkesi 1 (Kurgusal)",
+        "category": "Industrial area / Sanayi",
+        "description_en": "An industrial manufacturing site for metal processing, machinery assembly and production workshops.",
+        "description_tr": "Metal işleme, makine montajı ve üretim atölyeleri için sanayi tesisleri.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.885,
+          39.908
+        ]
+      },
+      "properties": {
+        "name": "Rüzgâr Spor Kompleksi 1 (Kurgusal)",
+        "category": "Sports / Spor",
+        "description_en": "A public sports facility with running tracks, a swimming pool, indoor courts and fitness classes.",
+        "description_tr": "Koşu parkurları, yüzme havuzu, kapalı spor salonu ve egzersiz dersleri içeren halka açık spor tesisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.828,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Mozaik Kültür Evi 1 (Kurgusal)",
+        "category": "Culture / Kültür",
+        "description_en": "A cultural center hosting theatre performances, art exhibitions, music workshops and community events.",
+        "description_tr": "Tiyatro gösterileri, sanat sergileri, müzik atölyeleri ve topluluk etkinlikleri düzenleyen kültür merkezi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.84,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Çınar Alışveriş Avlusu 1 (Kurgusal)",
+        "category": "Shopping / Alışveriş",
+        "description_en": "A pedestrian shopping area with local shops, grocery stores, bookstores and a weekend craft market.",
+        "description_tr": "Yerel dükkânlar, marketler, kitapçılar ve hafta sonu el sanatları pazarı bulunan yaya alışveriş alanı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.852,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Nar Sofrası 1 (Kurgusal)",
+        "category": "Restaurant / Restoran",
+        "description_en": "A neighborhood restaurant serving Turkish food, vegetarian meals, breakfast and fresh seasonal dishes.",
+        "description_tr": "Türk yemekleri, vejetaryen seçenekler, kahvaltı ve mevsimlik taze yemekler sunan mahalle restoranı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.864,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Birlik Hizmet Noktası 1 (Kurgusal)",
+        "category": "Public service / Kamu hizmeti",
+        "description_en": "A municipal public service office providing citizen support, community assistance and administrative services.",
+        "description_tr": "Vatandaş desteği, sosyal yardım ve idari hizmetler sağlayan belediye kamu hizmet ofisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-11",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.876,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Söğüt Yürüyüş Bahçesi 2 (Kurgusal)",
+        "category": "Park / Yeşil alan",
+        "description_en": "A quiet green recreational park with shaded walking paths, picnic lawns and a small playground.",
+        "description_tr": "Gölgeli yürüyüş yolları, piknik çimleri ve çocuk oyun alanıyla sakin bir yeşil dinlenme parkı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-12",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.888,
+          39.92
+        ]
+      },
+      "properties": {
+        "name": "Ufuk Sağlık Merkezi 2 (Kurgusal)",
+        "category": "Hospital / Hastane",
+        "description_en": "A hospital offering emergency care, outpatient clinics, diagnostic imaging and family medicine.",
+        "description_tr": "Acil bakım, poliklinik, tıbbi görüntüleme ve aile hekimliği sunan hastane.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-13",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.825,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Mavi Bilim Kampüsü 2 (Kurgusal)",
+        "category": "University / Üniversite",
+        "description_en": "A university and research campus with engineering laboratories, a public library and science education.",
+        "description_tr": "Mühendislik laboratuvarları, halka açık kütüphane ve bilim eğitimi bulunan üniversite araştırma kampüsü.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-14",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.837,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Filiz Öğrenme Okulu 2 (Kurgusal)",
+        "category": "School / Okul",
+        "description_en": "A primary and secondary school providing classrooms, arts education and after-school activities for children.",
+        "description_tr": "Çocuklar için derslikler, sanat eğitimi ve okul sonrası etkinlikler sunan ilkokul ve ortaokul.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-15",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.849,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Demir Üretim Yerleşkesi 2 (Kurgusal)",
+        "category": "Industrial area / Sanayi",
+        "description_en": "An industrial manufacturing site for metal processing, machinery assembly and production workshops.",
+        "description_tr": "Metal işleme, makine montajı ve üretim atölyeleri için sanayi tesisleri.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-16",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.861,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Rüzgâr Spor Kompleksi 2 (Kurgusal)",
+        "category": "Sports / Spor",
+        "description_en": "A public sports facility with running tracks, a swimming pool, indoor courts and fitness classes.",
+        "description_tr": "Koşu parkurları, yüzme havuzu, kapalı spor salonu ve egzersiz dersleri içeren halka açık spor tesisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-17",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.873,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Mozaik Kültür Evi 2 (Kurgusal)",
+        "category": "Culture / Kültür",
+        "description_en": "A cultural center hosting theatre performances, art exhibitions, music workshops and community events.",
+        "description_tr": "Tiyatro gösterileri, sanat sergileri, müzik atölyeleri ve topluluk etkinlikleri düzenleyen kültür merkezi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-18",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.885,
+          39.932
+        ]
+      },
+      "properties": {
+        "name": "Çınar Alışveriş Avlusu 2 (Kurgusal)",
+        "category": "Shopping / Alışveriş",
+        "description_en": "A pedestrian shopping area with local shops, grocery stores, bookstores and a weekend craft market.",
+        "description_tr": "Yerel dükkânlar, marketler, kitapçılar ve hafta sonu el sanatları pazarı bulunan yaya alışveriş alanı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-19",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.828,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Nar Sofrası 2 (Kurgusal)",
+        "category": "Restaurant / Restoran",
+        "description_en": "A neighborhood restaurant serving Turkish food, vegetarian meals, breakfast and fresh seasonal dishes.",
+        "description_tr": "Türk yemekleri, vejetaryen seçenekler, kahvaltı ve mevsimlik taze yemekler sunan mahalle restoranı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-20",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.84,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Birlik Hizmet Noktası 2 (Kurgusal)",
+        "category": "Public service / Kamu hizmeti",
+        "description_en": "A municipal public service office providing citizen support, community assistance and administrative services.",
+        "description_tr": "Vatandaş desteği, sosyal yardım ve idari hizmetler sağlayan belediye kamu hizmet ofisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-21",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.852,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Söğüt Yürüyüş Bahçesi 3 (Kurgusal)",
+        "category": "Park / Yeşil alan",
+        "description_en": "A quiet green recreational park with shaded walking paths, picnic lawns and a small playground.",
+        "description_tr": "Gölgeli yürüyüş yolları, piknik çimleri ve çocuk oyun alanıyla sakin bir yeşil dinlenme parkı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-22",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.864,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Ufuk Sağlık Merkezi 3 (Kurgusal)",
+        "category": "Hospital / Hastane",
+        "description_en": "A hospital offering emergency care, outpatient clinics, diagnostic imaging and family medicine.",
+        "description_tr": "Acil bakım, poliklinik, tıbbi görüntüleme ve aile hekimliği sunan hastane.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-23",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.876,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Mavi Bilim Kampüsü 3 (Kurgusal)",
+        "category": "University / Üniversite",
+        "description_en": "A university and research campus with engineering laboratories, a public library and science education.",
+        "description_tr": "Mühendislik laboratuvarları, halka açık kütüphane ve bilim eğitimi bulunan üniversite araştırma kampüsü.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-24",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.888,
+          39.944
+        ]
+      },
+      "properties": {
+        "name": "Filiz Öğrenme Okulu 3 (Kurgusal)",
+        "category": "School / Okul",
+        "description_en": "A primary and secondary school providing classrooms, arts education and after-school activities for children.",
+        "description_tr": "Çocuklar için derslikler, sanat eğitimi ve okul sonrası etkinlikler sunan ilkokul ve ortaokul.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-25",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.825,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Demir Üretim Yerleşkesi 3 (Kurgusal)",
+        "category": "Industrial area / Sanayi",
+        "description_en": "An industrial manufacturing site for metal processing, machinery assembly and production workshops.",
+        "description_tr": "Metal işleme, makine montajı ve üretim atölyeleri için sanayi tesisleri.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-26",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.837,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Rüzgâr Spor Kompleksi 3 (Kurgusal)",
+        "category": "Sports / Spor",
+        "description_en": "A public sports facility with running tracks, a swimming pool, indoor courts and fitness classes.",
+        "description_tr": "Koşu parkurları, yüzme havuzu, kapalı spor salonu ve egzersiz dersleri içeren halka açık spor tesisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-27",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.849,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Mozaik Kültür Evi 3 (Kurgusal)",
+        "category": "Culture / Kültür",
+        "description_en": "A cultural center hosting theatre performances, art exhibitions, music workshops and community events.",
+        "description_tr": "Tiyatro gösterileri, sanat sergileri, müzik atölyeleri ve topluluk etkinlikleri düzenleyen kültür merkezi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-28",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.861,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Çınar Alışveriş Avlusu 3 (Kurgusal)",
+        "category": "Shopping / Alışveriş",
+        "description_en": "A pedestrian shopping area with local shops, grocery stores, bookstores and a weekend craft market.",
+        "description_tr": "Yerel dükkânlar, marketler, kitapçılar ve hafta sonu el sanatları pazarı bulunan yaya alışveriş alanı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Public / Halka açık"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.873,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Nar Sofrası 3 (Kurgusal)",
+        "category": "Restaurant / Restoran",
+        "description_en": "A neighborhood restaurant serving Turkish food, vegetarian meals, breakfast and fresh seasonal dishes.",
+        "description_tr": "Türk yemekleri, vejetaryen seçenekler, kahvaltı ve mevsimlik taze yemekler sunan mahalle restoranı.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fictional-30",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.885,
+          39.956
+        ]
+      },
+      "properties": {
+        "name": "Birlik Hizmet Noktası 3 (Kurgusal)",
+        "category": "Public service / Kamu hizmeti",
+        "description_en": "A municipal public service office providing citizen support, community assistance and administrative services.",
+        "description_tr": "Vatandaş desteği, sosyal yardım ve idari hizmetler sağlayan belediye kamu hizmet ofisi.",
+        "fictional": true,
+        "notice": "Fictional demonstration feature. Kurgusal örnek; gerçek bir işletme değildir.",
+        "access": "Community / Topluluk"
+      }
+    }
+  ]
+}

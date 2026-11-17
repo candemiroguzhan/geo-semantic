@@ -1,0 +1,16 @@
+@inherits WorkspaceComponent
+<section class="pipeline-panel">
+    <div class="section-heading"><h2>AI Pipeline</h2><span class="live-label">MEASURED</span></div>
+    @if (State.Progress is { } p) {
+        <h3>Indexing · @p.Stage</h3><p>@p.DatasetName</p>
+        <dl><dt>Model</dt><dd>@p.Model</dd><dt>Dimensions</dt><dd>@p.Dimensions</dd><dt>Batches</dt><dd>@p.Batches</dd><dt>Indexed features</dt><dd>@p.Processed / @p.Total</dd><dt>Embedding</dt><dd>@Ms(p.EmbeddingDuration)</dd><dt>Qdrant upsert</dt><dd>@Ms(p.UpsertDuration)</dd><dt>Total elapsed</dt><dd>@Ms(p.Duration)</dd></dl>
+    }
+    @if (State.Search is { } s) {
+        <h3>Semantic retrieval</h3><p class="pipeline-query">“@s.Query”</p>
+        <dl><dt>Model</dt><dd>@s.Model</dd><dt>Embedding</dt><dd>@Ms(s.EmbeddingDuration)</dd><dt>Qdrant search</dt><dd>@Ms(s.VectorSearchDuration)</dd><dt>Total</dt><dd>@Ms(s.SearchDuration)</dd><dt>Returned</dt><dd>@s.RetrievedCount</dd></dl>
+    }
+    @if (State.Progress is null && State.Search is null) { <p class="muted">Build an index or run a search to inspect the real embedding and retrieval timings.</p> }
+    <p class="pipeline-note">Attribute text → Ollama → Qdrant → geographic features</p>
+</section>
+@code { private static string Ms(TimeSpan duration) => $"{duration.TotalMilliseconds:N0} ms"; }
+

@@ -1,0 +1,6 @@
+@inherits WorkspaceComponent
+<button class="result-item @(State.SelectedFeature?.Id == Result.FeatureId ? "active" : "")" @onclick="() => State.Select(Result.Feature)">
+    <span class="rank">@Result.Rank.ToString("D2")</span><span class="result-name"><strong>@Result.Feature.Name</strong><small>@Result.Feature.Category · @Result.Feature.GeometryType</small></span><span class="similarity">@Result.Score.ToString("F4")</span>
+</button>
+@code { [Parameter, EditorRequired] public SemanticSearchResult Result { get; set; } = default!; }
+

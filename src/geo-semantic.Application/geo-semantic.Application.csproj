@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><RootNamespace>GeoSemantic.Application</RootNamespace></PropertyGroup><ItemGroup><ProjectReference Include="../geo-semantic.Domain/geo-semantic.Domain.csproj" /><PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" /></ItemGroup></Project>

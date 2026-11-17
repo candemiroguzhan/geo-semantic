@@ -1,0 +1,30 @@
+@inherits WorkspaceComponent
+<section class="indexing-panel">
+    <div class="section-heading"><h2>Semantic index</h2><span>ATTRIBUTES</span></div>
+    <p class="muted">Select the fields that describe these places. Geometry is never embedded.</p>
+    <div class="property-picker">
+    @foreach (var property in State.ActiveDataset?.AvailableProperties ?? []) {
+        <label><input type="checkbox" checked="@selected.Contains(property)" disabled="@Running" @onchange="e => Toggle(property, (bool)e.Value!)" /> @property</label>
+    }
+    </div>
+    <MudButton FullWidth="true" Color="Color.Primary" Variant="Variant.Filled" Disabled="@(selected.Count == 0 || Running || State.Health?.Ready != true || State.Busy)" OnClick="IndexAsync">@(State.ActiveDataset?.Status == DatasetStatus.Indexed ? "Rebuild semantic index" : "Build semantic index")</MudButton>
+    @if (State.Health?.Ready != true) { <p class="muted">Ollama and Qdrant must be ready to index.</p> }
+    @if (State.Progress is { } progress) {
+        <div class="progress-block" role="status"><span>@progress.Stage · @progress.Processed / @progress.Total</span>
+        <progress value="@progress.Processed" max="@Math.Max(1, progress.Total)"></progress>
+        @if (!progress.Finished) { <button class="quiet" @onclick="State.CancelIndexing">Cancel indexing</button> }
+        @if (progress.Error is not null) { <p class="error-text">@progress.Error</p> }</div>
+    }
+</section>
+@code {
+    private HashSet<string> selected = [];
+    private bool Running => State.Progress is { Finished: false };
+    protected override void OnInitialized() {
+        base.OnInitialized();
+        selected = (State.ActiveDataset?.SelectedProperties.Count > 0 ? State.ActiveDataset.SelectedProperties :
+            State.ActiveDataset?.AvailableProperties.Where(p => p.Equals("name", StringComparison.OrdinalIgnoreCase) || p.Equals("category", StringComparison.OrdinalIgnoreCase) || p.Contains("description", StringComparison.OrdinalIgnoreCase)).ToArray() ?? []).ToHashSet(StringComparer.Ordinal);
+    }
+    private void Toggle(string field, bool enabled) { if (enabled) selected.Add(field); else selected.Remove(field); }
+    private Task IndexAsync() => State.ExecuteAsync(() => { State.StartIndexing(selected); return Task.CompletedTask; });
+}
+

@@ -1,0 +1,24 @@
+@inherits WorkspaceComponent
+@inject IJSRuntime JS
+<section class="results-panel @(collapsed ? "collapsed" : "")">
+    <header><button class="quiet" @onclick="() => collapsed = !collapsed">@(collapsed ? "▸" : "▾") Search results <span class="count">@(State.Search?.RetrievedCount ?? 0)</span></button>
+        <div><span class="muted">Cosine similarity · higher is closer</span><MudButton Size="Size.Small" Disabled="@(State.Search?.Results.Count is not > 0)" OnClick="ExportAsync">Export GeoJSON ↓</MudButton></div>
+    </header>
+    @if (!collapsed) {
+        @if (State.Search is null) { <div class="results-empty">Search by meaning to discover places in your indexed datasets.</div> }
+        else if (State.Search.Results.Count == 0) { <div class="results-empty">No matching indexed features were returned. Check the dataset filter and indexing status.</div> }
+        else {
+            <div class="results-list">@foreach(var result in State.Search.Results) { <SearchResultItem Result="result" @key="result.FeatureId" /> }</div>
+        }
+    }
+</section>
+@code {
+    private bool collapsed;
+    private async Task ExportAsync() {
+        if (State.Search is null) return;
+        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/maplibre/mapManager.js");
+        try { await module.InvokeVoidAsync("download", "geosemantic-results.geojson", State.Search.GeoJson); }
+        finally { await module.DisposeAsync(); }
+    }
+}
+

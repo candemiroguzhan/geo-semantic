@@ -1,0 +1,25 @@
+@inherits WorkspaceComponent
+@inject GeoSemantic.Application.Features.Search.SearchOptions Options
+<div class="search-area">
+    <form class="semantic-search" @onsubmit="SearchAsync" @onsubmit:preventDefault>
+        <span class="search-symbol">⌕</span><input aria-label="Natural language search" placeholder="Describe the places you're looking for…" @bind="State.Query" maxlength="2000" />
+        <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Filled" Disabled="@(State.Busy || State.Health?.Ready != true || !HasIndex)">Search</MudButton>
+        @if (State.Busy) { <button type="button" class="quiet" @onclick="Cancel">Cancel</button> }
+    </form>
+    <div class="search-options">
+        <label>Search in <select aria-label="Dataset filter" @bind="State.SearchDatasetId"><option value="">All indexed datasets</option>@foreach(var d in State.Datasets.Where(d => d.Status == DatasetStatus.Indexed)) { <option value="@d.Id">@d.Name</option> }</select></label>
+        <label>Results <input type="number" aria-label="Maximum results" min="1" max="@Options.MaxTopK" @bind="State.TopK" /></label>
+        <span class="muted">@(HasIndex ? "Semantic similarity · English / Türkçe" : "Index a dataset to enable semantic search")</span>
+    </div>
+</div>
+@code {
+    private CancellationTokenSource? cancellation;
+    private bool HasIndex => State.Datasets.Any(d => d.Status == DatasetStatus.Indexed);
+    private async Task SearchAsync() {
+        cancellation?.Dispose(); cancellation = new CancellationTokenSource();
+        await State.ExecuteAsync(() => State.SearchAsync(cancellation.Token));
+    }
+    private void Cancel() => cancellation?.Cancel();
+    public override void Dispose() { cancellation?.Cancel(); cancellation?.Dispose(); base.Dispose(); }
+}
+

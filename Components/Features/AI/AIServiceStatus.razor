@@ -1,0 +1,13 @@
+@inherits WorkspaceComponent
+<section class="service-status">
+    <div class="section-heading"><h2>Local services</h2><button class="quiet" disabled="@checking" @onclick="CheckAsync">Refresh</button></div>
+    <div class="service"><span class="dot @(State.Health?.Ollama.Online == true ? "online" : "offline")"></span><strong>Ollama</strong><span>@(State.Health is null ? "Checking" : State.Health.Ollama.Online ? "Ready" : "Offline")</span></div>
+    <p>@State.Health?.Ollama.Message</p>
+    <div class="service"><span class="dot @(State.Health?.Qdrant.Online == true ? "online" : "offline")"></span><strong>Qdrant</strong><span>@(State.Health is null ? "Checking" : State.Health.Qdrant.Online ? "Ready" : "Offline")</span></div>
+    <p>@State.Health?.Qdrant.Message</p>
+</section>
+@code {
+    private bool checking;
+    private async Task CheckAsync() { checking = true; try { await State.ExecuteAsync(() => State.CheckHealthAsync(true)); } finally { checking = false; } }
+}
+

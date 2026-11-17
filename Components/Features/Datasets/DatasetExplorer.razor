@@ -1,0 +1,38 @@
+@inherits WorkspaceComponent
+@inject IWebHostEnvironment Environment
+<section class="dataset-explorer">
+    <div class="section-heading"><h2>Data Explorer</h2><span>@State.Datasets.Count datasets</span></div>
+    <DatasetUpload />
+    @if (State.Datasets.Count == 0) {
+        <div class="empty-block"><h3>Bring your geography</h3><p>Import a WGS84 GeoJSON FeatureCollection to begin.</p></div>
+    }
+    <div class="dataset-list">
+    @foreach (var dataset in State.Datasets) {
+        <div class="dataset-card @(State.ActiveDatasetId == dataset.Id ? "active" : "")" @key="dataset.Id">
+            <button class="dataset-select" @onclick="() => State.ExecuteAsync(() => State.ActivateAsync(dataset.Id))"><span>◇</span><strong>@dataset.Name</strong></button>
+            <div class="dataset-meta"><span>@dataset.FeatureCount.ToString("N0") features</span><span class="status @dataset.Status.ToString().ToLowerInvariant()">@dataset.Status</span></div>
+            <div class="dataset-actions">
+                <label><input type="checkbox" checked="@State.VisibleDatasets.Contains(dataset.Id)" @onchange="e => State.ExecuteAsync(() => State.SetVisibilityAsync(dataset.Id, (bool)e.Value!))" /> Visible</label>
+                <button title="Delete dataset" class="quiet danger" disabled="@State.Busy" @onclick="() => pendingDelete = dataset.Id">Delete</button>
+            </div>
+            @if (pendingDelete == dataset.Id) {
+                <div class="delete-confirm">Delete this dataset and its vectors?<div><button @onclick="() => DeleteAsync(dataset.Id)">Delete permanently</button><button @onclick="() => pendingDelete = null">Keep</button></div></div>
+            }
+        </div>
+    }
+    </div>
+    <button class="sample-link" disabled="@State.Busy" @onclick="ImportSampleAsync">＋ Import fictional Ankara sample</button>
+    @if (State.ActiveDataset is not null) {
+        <DatasetStatistics Dataset="State.ActiveDataset" />
+        <DatasetIndexingPanel @key="State.ActiveDatasetId" />
+    }
+</section>
+@code {
+    private Guid? pendingDelete;
+    private Task DeleteAsync(Guid id) => State.ExecuteAsync(async () => { await State.DeleteAsync(id); pendingDelete = null; });
+    private Task ImportSampleAsync() => State.ExecuteAsync(async () => {
+        await using var stream = File.OpenRead(Path.Combine(Environment.ContentRootPath, "samples", "sample-pois.geojson"));
+        await State.ImportAsync(stream, "Fictional Ankara POIs.geojson");
+    });
+}
+

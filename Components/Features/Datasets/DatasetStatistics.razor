@@ -1,0 +1,11 @@
+<details class="statistics">
+    <summary>Dataset details</summary>
+    <dl><dt>Features</dt><dd>@Dataset.FeatureCount.ToString("N0")</dd><dt>Attributes</dt><dd>@Dataset.AvailableProperties.Count</dd></dl>
+    @foreach (var type in Dataset.GeometryTypes) { <div class="stat-line"><span>@type.Key</span><strong>@type.Value</strong></div> }
+    <p class="muted">WGS84 bounds<br /><code>@string.Join(", ", Dataset.Bounds.Select(v => v.ToString("F4", System.Globalization.CultureInfo.InvariantCulture)))</code></p>
+    <p class="muted">Imported @Dataset.CreatedAt.ToLocalTime().ToString("g")</p>
+    @if (Dataset.IndexedAt.HasValue) { <p class="muted">Indexed @Dataset.IndexedAt.Value.ToLocalTime().ToString("g")</p> }
+    @if (Dataset.Error is not null) { <p class="error-text">@Dataset.Error</p> }
+</details>
+@code { [Parameter, EditorRequired] public GeoDataset Dataset { get; set; } = default!; }
+

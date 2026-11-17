@@ -1,0 +1,53 @@
+@page "/explorer"
+@layout WorkspaceLayout
+@inherits WorkspaceComponent
+@inject GeoSemantic.Application.Features.Search.SearchOptions SearchOptions
+@inject ILogger<ExplorerPage> Logger
+<PageTitle>geo-semantic · Spatial intelligence</PageTitle>
+<div class="workbench @(inspectorOpen ? "" : "inspector-hidden")">
+    <aside class="explorer-panel">
+        <header class="brand"><span class="brand-mark">◈</span><div><strong>geo-semantic</strong><small>GEOSPATIAL AI WORKSPACE</small></div><span class="version">0.1</span></header>
+        <DatasetExplorer />
+        <AIServiceStatus />
+        <footer class="explorer-footer">LOCAL FIRST <span>WGS84 · EPSG:4326</span></footer>
+    </aside>
+    <main class="geographic-workspace">
+        <header class="workspace-header"><div><span class="eyebrow">WORKSPACE</span><h1>Explore by meaning</h1></div><MudButton Variant="Variant.Outlined" Size="Size.Small" OnClick="() => inspectorOpen = !inspectorOpen">Inspector</MudButton></header>
+        <SemanticSearchBar />
+        <div class="map-workspace">
+            <GeoMap />
+            @if (State.Datasets.Count == 0) {
+                <div class="map-empty"><span class="eyebrow">YOUR GEOGRAPHIC CANVAS</span><h2>Every place has a story.</h2><p>Import GeoJSON, choose its attributes, then search by meaning in English or Turkish.</p><p class="muted">Start with the fictional Ankara sample in the Data Explorer.</p></div>
+            }
+            <div class="map-legend"><span class="dot original"></span> Dataset <span class="dot result"></span> Search result <span class="dot selected"></span> Selection</div>
+        </div>
+        <SearchResultsPanel />
+    </main>
+    @if (inspectorOpen) { <aside class="inspector-panel"><FeatureInspector /><AIPipelinePanel /></aside> }
+    <AppNotification />
+</div>
+@code {
+    private bool inspectorOpen = true;
+    private readonly CancellationTokenSource lifetime = new();
+    protected override async Task OnInitializedAsync() {
+        State.TopK = SearchOptions.DefaultTopK;
+        await State.ExecuteAsync(State.InitializeAsync);
+        _ = PollProgressAsync();
+    }
+    private async Task PollProgressAsync() {
+        try {
+            using var timer = new PeriodicTimer(TimeSpan.FromSeconds(2));
+            GeoSemantic.Application.Features.Indexing.IndexingProgress? previous = null;
+            while (await timer.WaitForNextTickAsync(lifetime.Token)) {
+                await InvokeAsync(async () => {
+                    var current = State.Progress;
+                    if (current is not null && current != previous) { await State.RefreshAsync(); State.Notify(); }
+                    previous = current;
+                });
+            }
+        } catch (OperationCanceledException) when (lifetime.IsCancellationRequested) { }
+        catch (Exception ex) { Logger.LogWarning(ex, "Indexing progress refresh failed"); }
+    }
+    public override void Dispose() { lifetime.Cancel(); lifetime.Dispose(); base.Dispose(); }
+}
+

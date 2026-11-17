@@ -1,0 +1,7 @@
+@inherits WorkspaceComponent
+@if (State.Notice is not null) {
+    <div class="notification" role="@(State.IsError ? "alert" : "status")">
+        <MudAlert Severity="@(State.IsError ? Severity.Error : Severity.Success)" CloseIconClicked="State.ClearNotice" ShowCloseIcon="true">@State.Notice</MudAlert>
+    </div>
+}
+

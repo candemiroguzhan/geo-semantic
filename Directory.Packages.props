@@ -1,0 +1,16 @@
+<Project><PropertyGroup><ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally></PropertyGroup><ItemGroup>
+<PackageVersion Include="NetTopologySuite" Version="2.6.0" />
+<PackageVersion Include="NetTopologySuite.IO.GeoJSON4STJ" Version="4.0.0" />
+<PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.0" />
+<PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
+<PackageVersion Include="Microsoft.Extensions.Options.DataAnnotations" Version="10.0.0" />
+<PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.0" />
+<PackageVersion Include="Qdrant.Client" Version="1.20.0" />
+<PackageVersion Include="MudBlazor" Version="9.12.0" />
+<PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
+<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+<PackageVersion Include="Microsoft.Playwright" Version="1.64.1" />
+<PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+<PackageVersion Include="xunit" Version="2.9.3" />
+<PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+</ItemGroup></Project>

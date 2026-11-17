@@ -1,0 +1,13 @@
+@inherits WorkspaceComponent
+@inject Microsoft.Extensions.Options.IOptions<GeoSemantic.Infrastructure.Configuration.StorageOptions> Options
+<div class="upload-zone">
+    <label class="upload-label"><span>＋ Import GeoJSON</span><InputFile OnChange="UploadAsync" accept=".geojson,.json,application/geo+json,application/json" disabled="@State.Busy" /></label>
+    <small>WGS84 · up to @Options.Value.MaxUploadSizeMb MB · @Options.Value.MaxFeatures.ToString("N0") features</small>
+</div>
+@code {
+    private Task UploadAsync(InputFileChangeEventArgs args) => State.ExecuteAsync(async () => {
+        await using var stream = args.File.OpenReadStream(Options.Value.MaxUploadSizeMb * 1024L * 1024);
+        await State.ImportAsync(stream, args.File.Name);
+    });
+}
+

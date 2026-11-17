@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <RootNamespace>GeoSemantic</RootNamespace>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="src/**/*.cs;tests/**/*.cs" />
+        <Content Remove="src/**;tests/**" />
+        <None Remove="src/**;tests/**" />
+        <ProjectReference Include="src/geo-semantic.Application/geo-semantic.Application.csproj" />
+        <ProjectReference Include="src/geo-semantic.Infrastructure/geo-semantic.Infrastructure.csproj" />
+        <PackageReference Include="MudBlazor" />
+        <PackageReference Include="Serilog.AspNetCore" />
+        <Content Include="samples/*.geojson" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>
